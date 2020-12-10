@@ -1,0 +1,59 @@
+<ion-app>
+<ion-split-pane when="sm" contentId="main-content">
+<ion-menu contenId="main-content">
+  <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Menu Hoja de Vida
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-list-header>
+    Conoce más acerca de mí.
+  </ion-list-header>
+  <ion-menu-toogle [autoHide]="false">
+    <ion-item *ngFor="let c of componentes"
+    [routerLink]="c.redirectTo" detail>
+      <ion-label>{{ c.name }}</ion-label> 
+      <ion-icon slot="start" [name]="c.icon"></ion-icon>
+  
+     </ion-item> 
+    </ion-menu-toogle>
+  
+  </ion-list>
+</ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toogle>
+      <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+        </ion-menu-toogle>     
+    </ion-buttons>  
+  </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    
+  
+<ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>¿Quieres conocer más de mí?</ion-card-subtitle>
+      <ion-card-title>Hoja de vida Kimberly Jiménez</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      En la siguiente aplicación, te invito a conocer más de mí,
+      tanto de mi formación académica como de mi experiencia laboral.
+    </ion-card-content>
+  </ion-card>,
+</ion-content>
+</div>
+</ion-split-pane>
+</ion-app>
